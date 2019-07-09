@@ -39,8 +39,24 @@
 
 
 <script type="text/javascript">
-
-	// your solution here
+  var timerEvent = setInterval(addBubbles, 1000);
+  function addBubbles() {
+    var n = Math.floor(Math.random() * 5);
+    if (n == 0) {
+     $( ".shape-container" ).append( "<div class='p2-circle bg-blue'></div>" ); 
+    } else if (n == 1) {
+      $( ".shape-container" ).append( "<div class='p2-circle bg-purple'></div>" ); 
+    } else if (n == 2) {
+      $( ".shape-container" ).append( "<div class='p2-circle bg-orange'></div>" ); 
+    } else if (n == 3) {
+      $( ".shape-container" ).append( "<div class='p2-circle bg-green'></div>" ); 
+    } else {
+      $( ".shape-container" ).append( "<div class='p2-circle bg-blue p2-border'></div>" ); 
+    }
+  }
+  $( ".btn" ).click(function() {
+    clearInterval(timerEvent);
+  });
 
 </script>
 </body>
